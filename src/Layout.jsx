@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import "./Layout.css";
 
 function Layout() {
@@ -14,7 +15,7 @@ function Layout() {
           breadcrumb
         </div>
         <div className="outlet">
-          outlet
+          <Outlet />
         </div>
       </div>
     </div>
