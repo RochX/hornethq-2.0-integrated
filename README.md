@@ -1,4 +1,12 @@
-# React + Vite
+# Hornet HQ 2.0 Integrated
+This is the repository for the integrated design of Hornet HQ 2.0.
+It is combining the [unified design](https://github.com/RochX/hornethq-2.0-unified-design) and the [dashboard design](https://github.com/mpukabaofficial/dashboard/) into one project.
+The project is to recreate the [Hornet HQ](https://hornethq.kzoo.edu) web application, which is what Kalamazoo College uses for many aspects such as class registration, academic advising, and time entry for student employees.
+Hornet HQ as stands has many issues for current students, such as the course catalog being hard to search and navigate through and important information being buried under layers of tabs and buttons.
+
+By redesigning Hornet HQ, we wish to highlight these current issues and provide prototypes on possible solutions.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
