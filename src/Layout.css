@@ -3,7 +3,8 @@
 }
 
 .sidebar {
-  background-color: silver;
+  color: white;
+  background-color: #444;
   height: 100vh;
   width: 100px;
 }
@@ -13,13 +14,6 @@
 }
 
 .topbar {
-  background-color: blue;
-}
-
-.breadcrumb {
-  background-color: green;
-}
-
-.outlet {
-  background-color: red;
+  color: white;
+  background-color: #444;
 }
