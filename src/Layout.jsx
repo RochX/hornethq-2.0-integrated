@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./Layout.css";
+import BreadCrumbNav from "./components/BreadCrumbNav/BreadCrumbNav";
 
 function Layout() {
   return (
@@ -12,7 +13,7 @@ function Layout() {
           topbar
         </div>
         <div className="breadcrumb">
-          breadcrumb
+          <BreadCrumbNav />
         </div>
         <div className="outlet">
           <Outlet />
