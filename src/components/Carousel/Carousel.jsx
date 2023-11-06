@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 import "./Carousel.css";
 
@@ -98,10 +99,10 @@ const Carousel = () => {
         </div>
       </div>
       <button className="left-click slide-controller" onClick={handlePrev}>
-        left
+        <BsChevronLeft className="left-icon" />
       </button>
       <button className="right-click slide-controller" onClick={handleNext}>
-        right
+        <BsChevronRight />
       </button>
       <div className="slider-buttons">
         {carrouselData.map((box, index) => (

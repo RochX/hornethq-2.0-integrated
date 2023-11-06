@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "../../components/Carousel/Carousel";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import BillingCalculator from "../../Billing/BillingCalculator";
+import BillingCalculator from "../../components/Billing/BillingCalculator";
 import Calendar from "../../components/Calendar/Calendar";
 import "./IndexPage.css";
 
