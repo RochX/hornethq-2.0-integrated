@@ -10,7 +10,7 @@ import Employee from './pages/Employee';
 import FinInfo from './pages/FinInfo';
 import Billing from './pages/FinInfo/Billing';
 import FinAid from './pages/FinInfo/FinAid';
-import TaxInfo from './pages/FinInfo/TaxInfo';
+import StudentTaxInfo from './pages/FinInfo/StudentTaxInfo';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
         <Route path="financial" element={<FinInfo />} />
         <Route path="/financial/billing" element={<Billing />} />
         <Route path="/financial/aid" element={<FinAid />} />
-        <Route path="/financial/tax-information" element={<TaxInfo />} />
+        <Route path="/financial/tax-information" element={<StudentTaxInfo />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
