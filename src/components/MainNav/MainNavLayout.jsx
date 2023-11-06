@@ -53,7 +53,7 @@ const ACADEMICS_PAGE_BUTTONS_CONTENT = [
 const FININFO_PAGE_BUTTONS_CONTENT = [
   {title: "Billing", description: "Here you can view your latest statement and make a payment online.", path: "/financial/billing"},
   {title: "Financial Aid", description: "Here you can access financial aid data, forms, etc.", path: "/financial/aid"},
-  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information."}
+  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/financial/tax-information"}
 ]
 
 const EMPLOYEE_PAGE_BUTTONS_CONTENT = [
