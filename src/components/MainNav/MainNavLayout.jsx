@@ -26,12 +26,9 @@ function MainNavLayout(props) {
   }, [props.id]);
 
   return (
-    <>
-      <h1>Welcome to the {props.id} page!</h1>
-      <div className="main-nav-layout" id={props.id}>
-        {mainNavButtons}
-      </div>
-    </>
+    <div className="main-nav-layout" id={props.id}>
+      {mainNavButtons}
+    </div>
   )
 }
 
