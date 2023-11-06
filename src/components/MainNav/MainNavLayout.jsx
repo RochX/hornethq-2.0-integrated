@@ -60,8 +60,8 @@ const EMPLOYEE_PAGE_BUTTONS_CONTENT = [
   {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/employee/tax-information"},
   {title: "Time Entry", description: "Here you can fill out your timecards.", path: "/employee/time-sheet"},
   {title: "Earnings Statements", description: "Here you can view your earnings statement history.", path: "/employee/earnings-statements"},
-  {title: "Time History", description: "Here you can view your paid timecards."},
-  {title: "Time History", description: "Here you can view paid timecards for the people you supervise."}
+  {title: "Time History", description: "Here you can view your paid timecards.", path: "/employee/time-history"},
+  {title: "Time History (Supervisor)", description: "Here you can view paid timecards for the people you supervise.", path: "/employee/supervisor-time-history"}
 ]
 
 pageButtonDataDictionary["home"] = HOME_PAGE_BUTTONS_CONTENT;

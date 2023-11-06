@@ -9,7 +9,9 @@ import UnofficialTranscript from './pages/Academics/UnofficialTranscript';
 import Employee from './pages/Employee';
 import EmployeeTaxInfo from './pages/Employee/EmployeeTaxInfo';
 import EarningsStatements from './pages/Employee/EarningsStatements';
+import SupervisorTimeHistory from './pages/Employee/SupervisorTimeHistory';
 import TimeEntry from './pages/Employee/TimeEntry';
+import TimeHistory from './pages/Employee/TimeHistory';
 import FinInfo from './pages/FinInfo';
 import Billing from './pages/FinInfo/Billing';
 import FinAid from './pages/FinInfo/FinAid';
@@ -29,7 +31,9 @@ function App() {
         <Route path="/academics/transcripts" element={<UnofficialTranscript />} />
         <Route path="employee" element={<Employee />} />
         <Route path="/employee/earnings-statements" element={<EarningsStatements />} />
+        <Route path="/employee/supervisor-time-history" element={<SupervisorTimeHistory />} />
         <Route path="employee/tax-information" element={<EmployeeTaxInfo />} />
+        <Route path="/employee/time-history" element={<TimeHistory />} />
         <Route path="employee/time-sheet" element={<TimeEntry />} />
         <Route path="financial" element={<FinInfo />} />
         <Route path="/financial/billing" element={<Billing />} />
