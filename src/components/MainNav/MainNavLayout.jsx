@@ -47,7 +47,7 @@ const ACADEMICS_PAGE_BUTTONS_CONTENT = [
   {title: "Grades", description: "View grades here.", icon: "", path: "/academics/grades"},
   {title: "Course Catalog", description: "View the course catalog", icon: "", path: "/academics/catalog"},
   {title: "Student Planning", description: "View and register for upcoming classes.", icon: "", path: "/academics/planning"},
-  {title: "Unofficial Transcript", description: "Download an unofficial transcript."}
+  {title: "Unofficial Transcript", description: "Download an unofficial transcript.", path: "/academics/transcripts"}
 ]
 
 const FININFO_PAGE_BUTTONS_CONTENT = [
