@@ -5,6 +5,7 @@ import Academics from './pages/Academics';
 import Grades from './pages/Academics/Grades';
 import CourseCatalog from './pages/Academics/CourseCatalog';
 import StudentPlanning from './pages/Academics/StudentPlanning';
+import Employee from './pages/Employee';
 import FinInfo from './pages/FinInfo';
 import Billing from './pages/FinInfo/Billing';
 import FinAid from './pages/FinInfo/FinAid';
@@ -20,6 +21,7 @@ function App() {
         <Route path="academics/grades" element={<Grades />} />
         <Route path="/academics/catalog" element={<CourseCatalog />} />
         <Route path="/academics/planning" element={<StudentPlanning />} />
+        <Route path="employee" element={<Employee />} />
         <Route path="financial" element={<FinInfo />} />
         <Route path="/financial/billing" element={<Billing />} />
         <Route path="/financial/aid" element={<FinAid />} />
