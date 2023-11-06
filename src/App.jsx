@@ -1,16 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import IndexPage from "./pages/IndexPage/IndexPage";
-import Carrousel from "./components/Carousel/Carousel";
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './Layout'
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <>
-      <IndexPage />
-    </>
-  );
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="home" />} />
+        <Route path="home" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  )
 }
 
 export default App;

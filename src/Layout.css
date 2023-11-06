@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  color: white;
+  background-color: #444;
+  height: 100vh;
+  width: 100px;
+}
+
+.main {
+  width: calc(100% - 100px);
+}
+
+.topbar {
+  color: white;
+  background-color: #444;
+}
