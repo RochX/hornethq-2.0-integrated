@@ -57,7 +57,7 @@ const FININFO_PAGE_BUTTONS_CONTENT = [
 ]
 
 const EMPLOYEE_PAGE_BUTTONS_CONTENT = [
-  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information."},
+  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/employee/tax-information"},
   {title: "Time Entry", description: "Here you can fill out your timecards."},
   {title: "Earnings Statements", description: "Here you can view your earnings statement history."},
   {title: "Time History", description: "Here you can view your paid timecards."},
