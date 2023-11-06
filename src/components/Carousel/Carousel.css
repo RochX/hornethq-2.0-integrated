@@ -41,6 +41,7 @@
 .left-click {
   left: 16px;
   border: 1px solid white;
+  color: white;
 }
 .right-click {
   right: 16px;
