@@ -8,6 +8,7 @@ import StudentPlanning from './pages/Academics/StudentPlanning';
 import UnofficialTranscript from './pages/Academics/UnofficialTranscript';
 import Employee from './pages/Employee';
 import EmployeeTaxInfo from './pages/Employee/EmployeeTaxInfo';
+import EarningsStatements from './pages/Employee/EarningsStatements';
 import TimeEntry from './pages/Employee/TimeEntry';
 import FinInfo from './pages/FinInfo';
 import Billing from './pages/FinInfo/Billing';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/academics/planning" element={<StudentPlanning />} />
         <Route path="/academics/transcripts" element={<UnofficialTranscript />} />
         <Route path="employee" element={<Employee />} />
+        <Route path="/employee/earnings-statements" element={<EarningsStatements />} />
         <Route path="employee/tax-information" element={<EmployeeTaxInfo />} />
         <Route path="employee/time-sheet" element={<TimeEntry />} />
         <Route path="financial" element={<FinInfo />} />
