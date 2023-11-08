@@ -2,9 +2,6 @@ import "./TopBar.css";
 import React from "react";
 import { FaUser } from 'react-icons/fa';
 import { BiLogOut } from 'react-icons/bi';
-import { colors } from "@material-ui/core";
-import { orange } from "@material-ui/core/colors";
-
 
 function TopBar() {
   return (
