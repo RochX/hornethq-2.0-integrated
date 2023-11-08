@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React from 'react';
 import './SearchPage.css';
 import DropdownMenu from './DropdownMenu';
@@ -10,10 +9,10 @@ import ClassPicker from './ClassPicker'
 import { useState } from 'react';
 
 
-function App() {
+function SearchPage() {
     const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="App">
+    <div className="search-page">
       <h1>Hornet HQ</h1>
       <Navbar/>
       <h3>click the button to see your schedule</h3>
@@ -34,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default SearchPage;

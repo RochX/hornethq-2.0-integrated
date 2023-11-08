@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import './App.css';
+import './SearchPage.css';
 
 const Navbar = () => {
   return (

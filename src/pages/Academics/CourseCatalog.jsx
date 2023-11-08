@@ -1,6 +1,12 @@
+import SearchPage from "../../components/SearchPage/SearchPage";
+
 function CourseCatalog() {
   return (
-    <h2>This is the Course Catalog page.</h2>
+    
+    
+      <SearchPage />
+  
+
   );
 }
 
