@@ -1,0 +1,64 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.nav-dropdown {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar span {
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff6200;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #000000;
+}
+
+.space-between {
+  margin-right: 30px;
+}
