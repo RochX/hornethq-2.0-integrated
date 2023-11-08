@@ -8,6 +8,7 @@
 
 /* define stuff for the page button itself */
 .main-nav-button {
+  display: block;
   flex: 1;
   border: solid grey 3px;
   min-width: 45%;
@@ -38,11 +39,11 @@
 }
 
 .main-nav-button h3 {
-  margin-top: 0px;
+  margin: 0px;
   padding: 10px;
 }
 
-.main-nav-button span {
+.main-nav-button p {
+  margin: 0px;
   padding: 10px;
-  margin-bottom: 5px;
 }

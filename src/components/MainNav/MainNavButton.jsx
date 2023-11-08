@@ -9,7 +9,7 @@ function MainNavButton (props) {
     <div className="main-nav-button" id={props.id}>
       <Link to={props.path}>
         <h3>{props.title}</h3>
-        <span>{props.description}</span>
+        <p>{props.description}</p>
       </Link>
     </div>
   );
