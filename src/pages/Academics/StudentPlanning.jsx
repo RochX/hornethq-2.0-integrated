@@ -1,6 +1,6 @@
 function StudentPlanning() {
   return (
-    <div>
+    <div className="student-planning">
       <h2>This is the Student Planning page.</h2>
     </div>
   );
