@@ -1,15 +1,15 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './Layout'
-import Home from './pages/Home';
-import Academics from './pages/Academics';
-import Grades from './pages/Academics/Grades';
-import CourseCatalog from './pages/Academics/CourseCatalog';
-import StudentPlanning from './pages/Academics/StudentPlanning';
-import Employee from './pages/Employee';
-import FinInfo from './pages/FinInfo';
-import Billing from './pages/FinInfo/Billing';
-import FinAid from './pages/FinInfo/FinAid';
-import NotFound from './pages/NotFound';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Academics from "./pages/Academics";
+import Grades from "./pages/Academics/Grades";
+import CourseCatalog from "./pages/Academics/CourseCatalog";
+import StudentPlanning from "./pages/Academics/StudentPlanning";
+import Employee from "./pages/Employee";
+import FinInfo from "./pages/FinInfo";
+import Billing from "./pages/FinInfo/Billing";
+import FinAid from "./pages/FinInfo/FinAid";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
 export default App;
