@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-
 import "./Carousel.css";
 
 const Carousel = () => {
