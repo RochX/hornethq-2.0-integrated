@@ -23,7 +23,7 @@ const SideBar = () => {
     {
       name: "Employment",
       icon: <BiDollar className="icon" />,
-      link: "/employment",
+      link: "/employee",
     },
     {
       name: "Settings",
