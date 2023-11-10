@@ -47,21 +47,21 @@ const ACADEMICS_PAGE_BUTTONS_CONTENT = [
   {title: "Grades", description: "View grades here.", icon: "", path: "/academics/grades"},
   {title: "Course Catalog", description: "View the course catalog", icon: "", path: "/academics/catalog"},
   {title: "Student Planning", description: "View and register for upcoming classes.", icon: "", path: "/academics/planning"},
-  {title: "Unofficial Transcript", description: "Download an unofficial transcript."}
+  {title: "Unofficial Transcript", description: "Download an unofficial transcript.", path: "/academics/transcripts"}
 ]
 
 const FININFO_PAGE_BUTTONS_CONTENT = [
   {title: "Billing", description: "Here you can view your latest statement and make a payment online.", path: "/financial/billing"},
   {title: "Financial Aid", description: "Here you can access financial aid data, forms, etc.", path: "/financial/aid"},
-  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information."}
+  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/financial/tax-information"}
 ]
 
 const EMPLOYEE_PAGE_BUTTONS_CONTENT = [
-  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information."},
-  {title: "Time Entry", description: "Here you can fill out your timecards."},
-  {title: "Earnings Statements", description: "Here you can view your earnings statement history."},
-  {title: "Time History", description: "Here you can view your paid timecards."},
-  {title: "Time History", description: "Here you can view paid timecards for the people you supervise."}
+  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/employee/tax-information"},
+  {title: "Time Entry", description: "Here you can fill out your timecards.", path: "/employee/time-sheet"},
+  {title: "Earnings Statements", description: "Here you can view your earnings statement history.", path: "/employee/earnings-statements"},
+  {title: "Time History", description: "Here you can view your paid timecards.", path: "/employee/time-history"},
+  {title: "Time History (Supervisor)", description: "Here you can view paid timecards for the people you supervise.", path: "/employee/supervisor-time-history"}
 ]
 
 pageButtonDataDictionary["home"] = HOME_PAGE_BUTTONS_CONTENT;

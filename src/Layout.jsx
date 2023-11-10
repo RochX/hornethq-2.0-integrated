@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./Layout.css";
 import BreadCrumbNav from "./components/BreadCrumbNav/BreadCrumbNav";
+import TopBar from './components/TopBar/TopBar'
 import SideBar from "./components/SideBar/SideBar";
 
 function Layout() {
@@ -13,7 +14,7 @@ function Layout() {
 
       <div className="main">
         <div className="topbar">
-          topbar
+          <TopBar></TopBar>
         </div>
         <div className="breadcrumb">
           <BreadCrumbNav />

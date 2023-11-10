@@ -50,7 +50,7 @@ function addHomeToBreadCrumbList(list) {
 
 function createBreadCrumbWithLink(linkpath, breadcrumbkey) {
   let breadcrumbname = linkpath.slice(linkpath.lastIndexOf("/")+1);
-  breadcrumbname = capitalizeFirstOfName(breadcrumbname);
+  breadcrumbname = hypenatedStringToTitleCase(breadcrumbname);
   return (
     <>
       <Link to={linkpath} key={breadcrumbkey}>
@@ -63,8 +63,17 @@ function createBreadCrumbWithLink(linkpath, breadcrumbkey) {
 
 function createLastBreadCrumbWithoutLink(linkpath) {
   let breadcrumbname = linkpath.slice(linkpath.lastIndexOf("/")+1);
-  breadcrumbname = capitalizeFirstOfName(breadcrumbname);
+  breadcrumbname = hypenatedStringToTitleCase(breadcrumbname);
   return breadcrumbname;
+}
+
+function hypenatedStringToTitleCase(string) {
+  let words = string.split("-");
+  for (let i = 0; i < words.length; i++) {
+    words[i] = capitalizeFirstOfName(words[i]);
+  }
+
+  return words.join(" ");
 }
 
 function capitalizeFirstOfName(name) {
