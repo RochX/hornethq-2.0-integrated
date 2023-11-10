@@ -11,12 +11,20 @@
   display: block;
   flex: 1;
   border: solid grey 3px;
-  min-width: 45%;
-  max-width: 45%;
   margin-left: 2%;
   margin-bottom: 2%;
   overflow: hidden;
   background-color: white;
+}
+
+.main-nav-button.two-col {
+  min-width: 45%;
+  max-width: 45%;
+}
+
+.main-nav-button.one-col {
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .main-nav-button a {
