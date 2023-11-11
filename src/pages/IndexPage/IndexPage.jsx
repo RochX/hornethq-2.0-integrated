@@ -3,6 +3,7 @@ import Carousel from "../../components/Carousel/Carousel";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import BillingCalculator from "../../components/Billing/BillingCalculator";
 import Calendar from "../../components/Calendar/Calendar";
+import MainNavLayout from "../../components/MainNav/MainNavLayout";
 import "./IndexPage.css";
 
 const IndexPage = () => {
@@ -24,7 +25,10 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <Calendar />
+      <div>
+        <Calendar />
+        <MainNavLayout id="home" />
+      </div>
     </div>
   );
 };
