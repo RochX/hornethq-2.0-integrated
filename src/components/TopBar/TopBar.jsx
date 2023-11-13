@@ -2,9 +2,10 @@ import "./TopBar.css";
 import React from "react";
 import { FaUser } from 'react-icons/fa';
 import { BiLogOut } from 'react-icons/bi'
+import Cart from "./Cart";
 
 
-function TopBar({ carItems }) {
+function TopBar() {
   return (
     <>
       <div className="topnav">
@@ -22,7 +23,7 @@ function TopBar({ carItems }) {
         <a className="TopBar" href="">
           <BiLogOut style={{ color: 'orange' }} /> Sign Out
         </a>
-
+        <Cart carItems={carItems}></Cart>
       </div>
     </>
   );

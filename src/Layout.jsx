@@ -2,19 +2,23 @@ import { Outlet } from "react-router-dom";
 import "./Layout.css";
 import BreadCrumbNav from "./components/BreadCrumbNav/BreadCrumbNav";
 import TopBar from './components/TopBar/TopBar'
-import SideBar from "./components/SideBar/SideBar";
+import React, { useState } from 'react';
 
 function Layout() {
+  const [carItems, setCartItems] = useState([]);
 
+  const addToCart = (product) => {
+    // Copy the current items in the cart and add the new item
+    setCartItems([...carItems, product]);
+  };
   return (
     <div className="layout">
       <div className="sidebar">
-        <SideBar />
+        sidebar
       </div>
-
       <div className="main">
         <div className="topbar">
-          <TopBar></TopBar>
+          <TopBar addToCart={addToCart} carItems={carItems}></TopBar>
         </div>
         <div className="breadcrumb">
           <BreadCrumbNav />

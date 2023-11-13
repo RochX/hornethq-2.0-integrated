@@ -113,9 +113,6 @@ const Carousel = ({ addToCart }) => {
           ></button>
         ))}
       </div>
-      {carrouselData.map(item => (
-        <button key={item.index} className="add" onClick={() => addToCart(item.name)}>Quick add</button>
-      ))}
     </div>
   );
 };
