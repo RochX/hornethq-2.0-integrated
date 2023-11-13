@@ -12,7 +12,6 @@ function Modal({closeModal}) {
         <h2> This is your schedule</h2>
         </div>
         <div className="body"> 
-        <img src={require('./sample.png')} alt="Users course schedule for the selected term"></img>
 
         </div>
      </div>

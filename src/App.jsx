@@ -26,6 +26,7 @@ function App() {
         <Route path="/financial/billing" element={<Billing />} />
         <Route path="/financial/aid" element={<FinAid />} />
         <Route path="*" element={<NotFound />} />
+
       </Route>
     </Routes>
   );
