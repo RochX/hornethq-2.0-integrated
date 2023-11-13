@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 // import { YourFinancialIcon } from 'react-icons/...';
 
 const SideBar = () => {
+  const [isOpen, setIsOpen] = useState(true);
   const arraySidebar = [
     {
       name: "Home",
@@ -32,16 +33,23 @@ const SideBar = () => {
     },
   ];
 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div className="sidebar">
-      <div classname="hamburger">
+    <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
+      <div className="hamburger" onClick={toggleSidebar}>
         <FaBars />
       </div>
       <div className="map">
         {arraySidebar.map((item) => (
-          <Link to={item.link} className="link-container">
-            {item.icon}
-            {item.name}
+          <Link to={item.link} className="link-container" key={item.name}>
+            {isOpen ? (
+              item.icon
+            ) : (
+              <span className="icon-only">{item.icon}</span>
+            )}
+            {isOpen && item.name}
           </Link>
         ))}
       </div>

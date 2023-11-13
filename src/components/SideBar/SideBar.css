@@ -14,6 +14,10 @@ body {
   flex-direction: column;
   display: flex;
   color: white;
+  &.closed {
+    width: 50px; /* Adjust the width when closed */
+    overflow: hidden;
+  }
 }
 .map {
   background-color: hsl(0, 0%, 27%);
@@ -30,7 +34,7 @@ body {
 
 .hamburger {
   margin-right: 10px;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .link-container {
