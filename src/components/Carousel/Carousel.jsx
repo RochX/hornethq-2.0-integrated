@@ -46,8 +46,7 @@ const Carousel = () => {
         "https://images.pexels.com/photos/18072294/pexels-photo-18072294/free-photo-of-woman-standing-by-atm-at-night.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
-  const [currentlide, setCurrentSlide] = useState(0);
-  const currentSlide = 0;
+  const [currentSlide, setCurrentSlide] = useState(0);
   const handleNext = () => {
     if (currentSlide < carrouselData.length - 1) {
       setCurrentSlide(currentSlide + 1);
