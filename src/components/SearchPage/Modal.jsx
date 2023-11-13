@@ -9,10 +9,10 @@ function Modal({closeModal}) {
         > X </button>
         </div>
         <div className="title"> 
-        <h1> This is your schedule</h1>
+        <h2> This is your schedule</h2>
         </div>
         <div className="body"> 
-        <img src={require('./sample.png')}></img>
+        <img src={require('./sample.png')} alt="Users course schedule for the selected term"></img>
 
         </div>
      </div>

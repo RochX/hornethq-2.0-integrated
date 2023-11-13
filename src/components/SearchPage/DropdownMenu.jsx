@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './DropdownMenu.css';
 import axios from "axios";
  
 export function SubjectDropdown() {
@@ -62,8 +63,8 @@ export function SubjectDropdown() {
           </select>
         </div>
       ))}
-      <button onClick={addDropdown}>+ Add More...</button>
-      <button onClick={removeDropdown}>- Remove Last</button>
+      <button className="add-more-button" onClick={addDropdown}>+ Add More...</button>
+      <button className="remove-last-button" onClick={removeDropdown}>- Remove Last</button>
     </div>
   );
 }

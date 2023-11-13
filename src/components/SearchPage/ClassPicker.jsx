@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ClassPicker.css';
 
 const ClassPicker = () => {
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -14,8 +15,8 @@ const ClassPicker = () => {
 
   return (
     <div>
-      <h2>Pick Your Classes:</h2>
-      <div>
+      <h2>Days and Times for Courses:</h2>
+      <div className="checkbox-group">
         <h3>Monday/Wednesday/Friday:</h3>
         <label>
           <input
@@ -72,7 +73,7 @@ const ClassPicker = () => {
           2:45-4:00
         </label>
       </div>
-      <div>
+      <div className="checkbox-group">
         <h3>Tuesday/Thursday:</h3>
         <label>
           <input
@@ -111,34 +112,26 @@ const ClassPicker = () => {
           2:10-4:00
         </label>
       </div>
-      <div>
+      <div className="checkbox-group">
         <h3>Other:</h3>
         <label>
           <input
             type="checkbox"
-            name="Gym Classes"
-            checked={selectedClasses.includes("Gym Classes")}
+            name="Physical Education Courses"
+            checked={selectedClasses.includes("Physical Education Courses")}
             onChange={handleCheckboxChange}
           />
-          Gym Classes
+          Physical Education Courses
         </label>
         <label>
           <input
             type="checkbox"
-            name="Other"
-            checked={selectedClasses.includes("Other")}
+            name="Courses Outside of Normal Schedule"
+            checked={selectedClasses.includes("Courses Outside of Normal Schedule")}
             onChange={handleCheckboxChange}
           />
-          Other
+          Courses Outside of Normal Schedule
         </label>
-      </div>
-      <div>
-        <h3>Selected Classes:</h3>
-        <ul>
-          {selectedClasses.map((selectedClass) => (
-            <li key={selectedClass}>{selectedClass}</li>
-          ))}
-        </ul>
       </div>
     </div>
   );
