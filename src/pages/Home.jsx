@@ -6,6 +6,7 @@ function Home() {
     <div className="home">
       <h1>Home Page</h1>
       <IndexPage />
+      <MainNavLayout id="home" />
     </div>
   );
 }
