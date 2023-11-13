@@ -16,6 +16,7 @@ import FinInfo from './pages/FinInfo';
 import Billing from './pages/FinInfo/Billing';
 import FinAid from './pages/FinInfo/FinAid';
 import StudentTaxInfo from './pages/FinInfo/StudentTaxInfo';
+import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/financial/billing" element={<Billing />} />
         <Route path="/financial/aid" element={<FinAid />} />
         <Route path="/financial/tax-information" element={<StudentTaxInfo />} />
+        <Route path="settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
