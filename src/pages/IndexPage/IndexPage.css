@@ -52,3 +52,23 @@
   gap: 32px;
 }
 /* Styles for the white box overlay */
+
+.simple {
+  background: gray;
+}
+.dashboard {
+  background: #ea6820;
+}
+.homeButton {
+  width: fit-content;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+.homeButton-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 32px;
+}
