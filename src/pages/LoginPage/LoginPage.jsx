@@ -1,8 +1,8 @@
 import "./LoginPage.css";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   return (
-
     <div className="page">
       <div className="bodyjank">
         <h1 className="Hornet-Title"> Welcome to Hornet HQ</h1>
@@ -26,16 +26,16 @@ function LoginPage() {
               <button onClick={() => setName("Forgot Password?")}>
                 Forgot Password?
               </button>
-              <input type="submit" value="Log In" />
+
+              <Link to="/">
+                <input type="submit" value="Log In" />
+              </Link>
             </div>
           </form>
         </div>
-
       </div>
     </div>
-
   );
-
 }
 
 export default LoginPage;
