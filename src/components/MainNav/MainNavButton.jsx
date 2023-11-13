@@ -13,7 +13,10 @@ function MainNavButton (props) {
   return (
     <div className={main_nav_classname}  id={props.id}>
       <Link to={props.path}>
-        <h3>{props.icon}{props.title}</h3>
+      <h3>
+        <span className="main-nav-icon">{props.icon} </span>
+        {props.title}
+      </h3>
         <p>{props.description}</p>
       </Link>
     </div>

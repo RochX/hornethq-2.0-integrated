@@ -38,6 +38,10 @@
   padding: 10px;
 }
 
+.main-nav-icon {
+  font-size: 17pt;
+}
+
 .main-nav-button a:visited {
   color: blue;
   text-decoration: none;
