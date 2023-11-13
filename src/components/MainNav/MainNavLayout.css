@@ -1,0 +1,57 @@
+.main-nav-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80vw;
+  padding: 10px;
+}
+
+/* define stuff for the page button itself */
+.main-nav-button {
+  display: block;
+  flex: 1;
+  border: solid grey 3px;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.main-nav-button.two-col {
+  min-width: 45%;
+  max-width: 45%;
+}
+
+.main-nav-button.one-col {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.main-nav-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: blue;
+  text-decoration: none;
+  white-space: pre-line;
+  padding: 10px;
+}
+
+.main-nav-button a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.main-nav-button a:hover {
+  background-color: lightblue;
+}
+
+.main-nav-button h3 {
+  margin: 0px;
+  padding: 10px;
+}
+
+.main-nav-button p {
+  margin: 0px;
+  padding: 10px;
+}

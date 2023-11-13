@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial;
+}
+.sidebar {
+  padding: 16px;
+  color: black;
+  background-color: #444;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  color: white;
+}
+.map {
+  background-color: hsl(0, 0%, 27%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 24px;
+}
+.link-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px;
+}
