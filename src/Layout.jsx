@@ -2,13 +2,16 @@ import { Outlet } from "react-router-dom";
 import "./Layout.css";
 import BreadCrumbNav from "./components/BreadCrumbNav/BreadCrumbNav";
 import TopBar from './components/TopBar/TopBar'
+import SideBar from "./components/SideBar/SideBar";
 
 function Layout() {
+
   return (
     <div className="layout">
       <div className="sidebar">
-        sidebar
+        <SideBar />
       </div>
+
       <div className="main">
         <div className="topbar">
           <TopBar></TopBar>
