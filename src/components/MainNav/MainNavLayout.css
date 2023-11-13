@@ -8,6 +8,7 @@
 
 /* define stuff for the page button itself */
 .main-nav-button {
+  font-size: 10pt;
   display: block;
   flex: 1;
   border: solid grey 3px;
