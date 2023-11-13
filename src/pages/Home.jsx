@@ -26,6 +26,7 @@ function Home() {
           <MainNavLayout id="home" />
         </div>
       }
+
     </div>
   );
 }
