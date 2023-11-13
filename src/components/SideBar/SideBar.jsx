@@ -34,7 +34,9 @@ const SideBar = () => {
 
   return (
     <div className="sidebar">
-      <div>hamburger</div>
+      <div classname="hamburger">
+        <FaBars />
+      </div>
       <div className="map">
         {arraySidebar.map((item) => (
           <Link to={item.link} className="link-container">
