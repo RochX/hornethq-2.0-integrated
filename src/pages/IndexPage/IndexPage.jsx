@@ -7,7 +7,7 @@ import "./IndexPage.css";
 
 const IndexPage = () => {
   return (
-    <div className="body">
+    <div className="index-page-body">
       <div className="carousel-prog-bill">
         <div className="carousel-container section-bg">
           <Carousel />
