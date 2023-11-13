@@ -3,7 +3,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 import "./Carousel.css";
 
-const Carousel = () => {
+const Carousel = ({ addToCart }) => {
   const carrouselData = [
     {
       title: "Intro to Sleeping",
@@ -113,9 +113,10 @@ const Carousel = () => {
           ></button>
         ))}
       </div>
-      <button className="add">Quick add</button>
+      {carrouselData.map(item => (
+        <button key={item.index} className="add" onClick={() => addToCart(item.name)}>Quick add</button>
+      ))}
     </div>
   );
 };
-
 export default Carousel;
