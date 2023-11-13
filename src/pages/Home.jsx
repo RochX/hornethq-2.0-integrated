@@ -20,12 +20,12 @@ function Home() {
       </div>
 
       {!view && <IndexPage />}
-      {
+      {view && (
         <div>
           <h1>Home Page</h1>
           <MainNavLayout id="home" />
         </div>
-      }
+      )}
     </div>
   );
 }
