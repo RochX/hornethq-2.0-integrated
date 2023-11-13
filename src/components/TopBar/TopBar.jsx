@@ -3,9 +3,12 @@ import React from "react";
 import { FaUser } from 'react-icons/fa';
 import { BiLogOut } from 'react-icons/bi'
 import Cart from "./Cart";
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 
-function TopBar() {
+function TopBar({ carItems, addToCart }) {
+  const [showResults, setShowResults] = React.useState(false)
+  const onClick = () => setShowResults(true)
   return (
     <>
       <div className="topnav">
@@ -23,8 +26,13 @@ function TopBar() {
         <a className="TopBar" href="">
           <BiLogOut style={{ color: 'orange' }} /> Sign Out
         </a>
-        <Cart carItems={carItems}></Cart>
+        <a className="TopBar" onClick={onClick} >
+          <AiOutlineShoppingCart style={{ color: 'orange' }}>
+          </AiOutlineShoppingCart> Cart
+        </a>
+
       </div>
+      {showResults ? <Cart carItems={carItems}></Cart> : null}
     </>
   );
 }

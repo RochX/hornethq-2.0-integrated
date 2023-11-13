@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./TopBar.css";
 
 const Cart = ({ carItems }) => {
+
     return (
         <div>
-            <h2>Shopping Cart</h2>
             <ul>
-                {carItems.map(item => (
-                    <li key={item.key}>
-                        {item.name}
+                {carItems.map(product => (
+                    <li key={product.index}>
+                        <a href="">{product.title}</a>
                     </li>
                 ))}
             </ul>
