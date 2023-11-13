@@ -15,7 +15,7 @@
   );
 }
 
-.body {
+.index-page-body {
   display: grid;
   grid-template-columns: 5fr 3fr;
   gap: 32px;
@@ -45,6 +45,7 @@
 }
 .calendar {
   height: 100%;
+  width: 100%;
 }
 .cal-search {
   display: flex;
