@@ -24,6 +24,7 @@ import CourseDetail from "./pages/CourseDetail/CourseDetail";
 function App() {
   return (
     <Routes>
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Navigate to="login" />} />
 
