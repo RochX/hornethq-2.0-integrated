@@ -13,7 +13,7 @@ const SideBar = () => {
     {
       name: "Home",
       icon: <FaHome className="icon" />,
-      link: "/",
+      link: "/home",
     },
     {
       name: "Academics",
