@@ -1,32 +1,56 @@
-import React, { useState } from 'react';
-import './SearchPage.css';
+// DropdownMenu.js
+import React, { useContext, useEffect, useState } from "react";
+import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
+import axios from "axios";
+import { TermContext } from "./TermContext"; // Import TermContext
 
+function TermSelection() {
+  const [terms, setTerms] = useState([]);
+  const { selectedTerm, setSelectedTerm } = useContext(TermContext); // Use TermContext
 
-function DropdownMenu() {
-  // State to keep track of the selected term
-  const [selectedTerm, setSelectedTerm] = useState('');
+  useEffect(() => {
+    const fetchTerms = async () => {
+      try {
+        const response = await axios.get(
+          "https://hhqv2backend.vercel.app/api/term"
+        );
+        const fetchedTerms = response.data.map((term) => term.term_id);
+        setTerms(fetchedTerms);
+      } catch (error) {
+        console.error("Error fetching terms:", error);
+      }
+    };
 
-  // Define the terms as options
-  const terms = ['Fall 2023','Winter 2024', 'Spring 2024' ];
+    fetchTerms();
+  }, []);
 
-  // Event handler for when a term is selected
   const handleTermChange = (event) => {
     setSelectedTerm(event.target.value);
   };
 
   return (
-    <div>
-      <h2>Term:</h2>
-      <select value={selectedTerm} onChange={handleTermChange}>
-        <option value="">Select a Term</option>
-        {terms.map((term, index) => (
-          <option key={index} value={term}>
-            {term}
-          </option>
-        ))}
-      </select>
-    </div>
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="term-select-label">Term</InputLabel>
+        <Select
+          labelId="term-select-label"
+          id="term-select"
+          value={selectedTerm}
+          label="Term"
+          onChange={handleTermChange}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          {terms.map((term, index) => (
+            <MenuItem key={index} value={term}>
+              {term}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </Box>
   );
 }
 
-export default DropdownMenu;
+export default TermSelection;
