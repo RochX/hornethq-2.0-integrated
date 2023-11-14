@@ -1,0 +1,33 @@
+.clear-button {
+    background-color: #ff6200; 
+    color: #ffffff;
+    border: 2px solid #ff6200;
+  }
+  
+  .search-button {
+    background-color: #000000; 
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .clear-button, .search-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+
+    &:hover {
+        opacity: 0.9; /* Reduce opacity on hover for both buttons */
+      }
+    
+      &:active {
+        opacity: 0.8; /* Reduce opacity when button is clicked for both buttons */
+      }
+    }
+
+.button-container {
+    margin-top: 20px; /* Adjust the margin-top value as needed */
+  }
