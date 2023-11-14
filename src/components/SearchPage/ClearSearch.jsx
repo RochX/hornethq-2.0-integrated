@@ -11,6 +11,7 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Sheet,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import SearchIcon from "@mui/icons-material/Search";
@@ -103,9 +104,10 @@ const ClearSearch = () => {
         flexDirection: "column",
         gap: 2,
         alignItems: "center",
+        mt: 4,
       }}
     >
-      <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+      <Box sx={{ display: "flex", gap: 2, alignItems: "center", mb: 2 }}>
         <Button
           variant="outlined"
           color="primary"
@@ -123,36 +125,41 @@ const ClearSearch = () => {
           Search
         </Button>
       </Box>
-      <TableContainer component={Paper} sx={{ maxWidth: 1200, marginTop: 0 }}>
-        <Table aria-label="course schedule">
+      <TableContainer
+        component={Paper}
+        sx={{ maxWidth: "100%", overflowX: "auto" }}
+      >
+        <Table aria-label="course schedule" stickyHeader>
           <TableHead>
-            <TableRow>
+            <TableRow
+              sx={{
+                "& th": { fontWeight: "bold", backgroundColor: "#f5f5f5" },
+              }}
+            >
               <TableCell>Course Title</TableCell>
-              <TableCell sx={{ width: 600 }}>Description</TableCell>
-              <TableCell align="right" sx={{ width: 100 }}>
-                Days
-              </TableCell>
+              <TableCell>Description</TableCell>
+              <TableCell align="right">Days</TableCell>
               <TableCell align="right">Time</TableCell>
               <TableCell>Credit</TableCell>
-              <TableCell sx={{ width: 280 }}>Student Capacity</TableCell>
-              <TableCell sx={{ width: 280 }}>Students Enrolled</TableCell>
-              <TableCell sx={{ width: 280 }}>Section Number</TableCell>
+              <TableCell>Capacity</TableCell>
+              <TableCell>Enrolled</TableCell>
+              <TableCell>Section</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {filteredCourses.map((course, index) => (
-              <TableRow key={index}>
+              <TableRow
+                key={index}
+                hover
+                sx={{ "&:nth-of-type(odd)": { backgroundColor: "#f9f9f9" } }}
+              >
                 <TableCell>{course.title}</TableCell>
                 <TableCell>{course.description}</TableCell>
-                <TableCell align="right" sx={{ width: 100 }}>
-                  {course.days}
-                </TableCell>
+                <TableCell align="right">{course.days}</TableCell>
                 <TableCell align="right">{course.time}</TableCell>
                 <TableCell>{course.credit}</TableCell>
-                <TableCell sx={{ width: 200 }}>
-                  {course.capacity} Students
-                </TableCell>
-                <TableCell>{course.activeStudents} Students</TableCell>
+                <TableCell>{`${course.capacity} Students`}</TableCell>
+                <TableCell>{`${course.activeStudents} Students`}</TableCell>
                 <TableCell>{course.sectionNumber}</TableCell>
               </TableRow>
             ))}

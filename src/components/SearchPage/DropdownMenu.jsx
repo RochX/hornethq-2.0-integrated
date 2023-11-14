@@ -63,7 +63,6 @@ export function DropdownMenu() {
 
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
-      <h2>Select Subjects:</h2>
       {selectedSubjects.map((selectedSubject, index) => (
         <FormControl key={index} fullWidth>
           <InputLabel>Subject</InputLabel>
