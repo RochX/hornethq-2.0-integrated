@@ -23,9 +23,10 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />} />
+      <Route path="/" element={<LoginPage />} />
       <Route index element={<Navigate to="LoginPage" />} />
-      <Route path="home" element={<Home />} />
+      <Route path="/layout/home" element={<Home />} />
+
       <Route path="academics" element={<Academics />} />
       <Route path="academics/grades" element={<Grades />} />
       <Route path="/academics/catalog" element={<CourseCatalog />} />
