@@ -4,6 +4,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import KColor from "../../KColor.png";
 import { Link } from "react-router-dom";
 import "./Carousel.css";
+import "../../KColor.png";
 
 const Carousel = () => {
   const [carouselData, setCarouselData] = useState([]);
