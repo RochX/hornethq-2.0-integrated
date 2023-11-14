@@ -7,7 +7,7 @@ The project is to recreate the [Hornet HQ](https://hornethq.kzoo.edu) web applic
 This repository is the "integrated" version as it is combining the [unified design](https://github.com/RochX/hornethq-2.0-unified-design) and the [dashboard design](https://github.com/mpukabaofficial/dashboard/) for the frontend.
 
 **Message from the Backend Team:**
-It also integrates the backend developed by multiple people and this is the repository to take a look at what we used in the backend in this repository [backend](https://github.com/harshsepi0l/HHQV2-Backend/).
+It also integrates the backend developed by multiple people and this is the repository to take a look at what we used in the backend in this [repository](https://github.com/harshsepi0l/HHQV2-Backend/).
 
 Hornet HQ as it stands has many issues for current students, such as the course catalog being hard to search and navigate through and important information being buried under layers of tabs and buttons.
 
