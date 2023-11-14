@@ -57,6 +57,7 @@ function App() {
         <Route path="/financial/tax-information" element={<StudentTaxInfo />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
+
       </Route>
     </Routes>
   );

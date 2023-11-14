@@ -1,0 +1,13 @@
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  
+  .checkbox-group h3 {
+    margin-bottom: 5px; /* Add a small bottom margin to the headers */
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }

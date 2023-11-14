@@ -1,0 +1,43 @@
+
+
+.add-more-button {
+    background-color: #ff6200; /* Blue color for Add More button */
+    color: #ffffff;
+    border: 2px solid #ff6200;
+    padding: 2px 4px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  
+    &:hover {
+        opacity: 0.9; /* Reduce opacity on hover for both buttons */
+      }
+    
+      &:active {
+        opacity: 0.8; /* Reduce opacity when button is clicked for both buttons */
+      }
+    }
+  
+  
+  .remove-last-button {
+    background-color: #000000; /* Red color for Remove Last button */
+    color: #ffffff;
+    border: 2px solid #000000;
+    padding: 2px 4px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  
+    &:hover {
+        opacity: 0.9; /* Reduce opacity on hover for both buttons */
+      }
+    
+      &:active {
+        opacity: 0.8; /* Reduce opacity when button is clicked for both buttons */
+      }
+    }
+  
+
+  
