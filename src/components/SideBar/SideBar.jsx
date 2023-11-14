@@ -12,7 +12,7 @@ const SideBar = ({ isOpen, toggleSideBar }) => {
     {
       name: "Home",
       icon: <FaHome className="icon" />,
-      link: "/",
+      link: "/home",
     },
     {
       name: "Academics",

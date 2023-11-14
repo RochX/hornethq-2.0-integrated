@@ -19,13 +19,17 @@ import StudentTaxInfo from "./pages/FinInfo/StudentTaxInfo";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import CourseDetail from "./pages/CourseDetail/CourseDetail";
 
 function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="home" />} />
+        <Route index element={<Navigate to="login" />} />
+
+        <Route path="/course-detail/:courseId" element={<CourseDetail />} />
+
         <Route path="home" element={<Home />} />
         <Route path="academics" element={<Academics />} />
         <Route path="academics/grades" element={<Grades />} />
