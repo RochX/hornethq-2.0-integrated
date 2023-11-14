@@ -84,6 +84,11 @@ const ClearSearch = () => {
             title: course.title,
             days: offering.weekdays,
             time: `${offering.start_time}-${offering.end_time}`,
+            description: course.description,
+            credit: offering.credit,
+            activeStudents: offering.active_students,
+            capacity: offering.capacity,
+            sectionNumber: offering.section_number,
           }))
       )
       .flat();
@@ -118,23 +123,37 @@ const ClearSearch = () => {
           Search
         </Button>
       </Box>
-      <TableContainer component={Paper} sx={{ maxWidth: 600, marginTop: 0 }}>
+      <TableContainer component={Paper} sx={{ maxWidth: 1200, marginTop: 0 }}>
         <Table aria-label="course schedule">
           <TableHead>
             <TableRow>
               <TableCell>Course Title</TableCell>
-              <TableCell align="right">Days</TableCell>
+              <TableCell sx={{ width: 600 }}>Description</TableCell>
+              <TableCell align="right" sx={{ width: 100 }}>
+                Days
+              </TableCell>
               <TableCell align="right">Time</TableCell>
+              <TableCell>Credit</TableCell>
+              <TableCell sx={{ width: 280 }}>Student Capacity</TableCell>
+              <TableCell sx={{ width: 280 }}>Students Enrolled</TableCell>
+              <TableCell sx={{ width: 280 }}>Section Number</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {filteredCourses.map((course, index) => (
               <TableRow key={index}>
-                <TableCell component="th" scope="row">
-                  {course.title}
+                <TableCell>{course.title}</TableCell>
+                <TableCell>{course.description}</TableCell>
+                <TableCell align="right" sx={{ width: 100 }}>
+                  {course.days}
                 </TableCell>
-                <TableCell align="right">{course.days}</TableCell>
                 <TableCell align="right">{course.time}</TableCell>
+                <TableCell>{course.credit}</TableCell>
+                <TableCell sx={{ width: 200 }}>
+                  {course.capacity} Students
+                </TableCell>
+                <TableCell>{course.activeStudents} Students</TableCell>
+                <TableCell>{course.sectionNumber}</TableCell>
               </TableRow>
             ))}
           </TableBody>
