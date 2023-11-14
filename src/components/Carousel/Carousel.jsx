@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./Carousel.css";
 import "../../KColor.png";
 
-const Carousel = () => {
+const Carousel = ({ onDataPassed }) => {
   const [carouselData, setCarouselData] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -46,6 +46,11 @@ const Carousel = () => {
       currentSlide > 0 ? currentSlide - 1 : carouselData.length - 1
     );
   };
+
+  const handleAdd = () => {
+    const data = carouselData[currentSlide].course_id;
+    onDataPassed(data);
+  }
 
   useEffect(() => {
     const intervalId = setInterval(handleNext, 5000);
@@ -94,6 +99,7 @@ const Carousel = () => {
         <BsChevronRight />
       </button>
       {/* Additional elements */}
+      <button className="add" onClick={handleAdd}>Quick add</button>
     </div>
   );
 };

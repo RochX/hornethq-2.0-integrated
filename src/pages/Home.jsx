@@ -3,7 +3,13 @@ import IndexPage from "./IndexPage/IndexPage";
 import Layout from "../Layout";
 import { useState } from "react";
 
-function Home() {
+function Home({ onDataPassed }) {
+  const [dataFromChild, setDataFromChild] = useState(null);
+
+  const handleChildData = (childData) => {
+    setDataFromChild(childData);
+    onDataPassed(childData);
+  };
   const [view, setView] = useState(false);
 
   const color = () => {
@@ -20,7 +26,7 @@ function Home() {
         </button>
       </div>
 
-      {!view && <IndexPage />}
+      {!view && <IndexPage onDataPassed={handleChildData} />}
       {view && (
         <div>
           <h1>Home Page</h1>
