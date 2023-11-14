@@ -6,7 +6,7 @@ import TopBar from "./components/TopBar/TopBar";
 import SideBar from "./components/SideBar/SideBar";
 import { Link } from "react-router-dom";
 
-function Layout() {
+function Layout({ courseID }) {
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
 
   const toggleSideBar = () => {
@@ -20,7 +20,7 @@ function Layout() {
 
       <div className={`main ${isSideBarOpen ? "" : "closed"}`}>
         <div className="topbar">
-          <TopBar toggleSideBar={toggleSideBar} />
+          <TopBar toggleSideBar={toggleSideBar} courseID={courseID} />
         </div>
         <div className="breadcrumb">
           <BreadCrumbNav />
