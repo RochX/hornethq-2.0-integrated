@@ -17,6 +17,10 @@
   min-height: 100vh;
 }
 
+.main.closed {
+  width: calc(100% - 50px); /* Adjust the width when closed */
+}
+
 .topbar {
   color: white;
   background-color: #444;
