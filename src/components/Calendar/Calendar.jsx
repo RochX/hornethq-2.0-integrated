@@ -1,138 +1,80 @@
-import "./Calendar.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Clock from "../Clock/Clock";
+import "./Calendar.css";
 
 const Calendar = () => {
-  const [schedule, setSchedule] = useState([
-    {
-      time: "08:00 AM",
-      event: "Applied statistics",
-      Bulding: "Olds Upton",
-      classNum: 234,
-    },
-    {
-      time: "10:00 AM",
-      event: "Advanced Software Development",
-      Bulding: "Dewing",
-      classNum: 300,
-    },
-    // Add more schedule items as needed
-  ]);
-  const [add, setAdd] = useState(false);
-  const [name, setName] = useState("");
-  const [time, setTime] = useState("");
-  const [location, setLocation] = useState("");
-  console.log(time);
+  const [schedule, setSchedule] = useState([]);
 
-  // for making the new event item
-  const handleSubmission = (event) => {
-    event.preventDefault();
-    const newEvent = {
-      time: convertTo12HourFormat(time),
-      event: name,
-      Bulding: location,
-      classNum: "",
-    };
-    setSchedule([...schedule, newEvent]);
-    setAdd(false);
-    setLocation("");
-    setName("");
-    setTime("");
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const studentId = localStorage.getItem("student_id");
+        if (!studentId) {
+          console.error("No student ID found in localStorage.");
+          return;
+        }
 
-  const handleCancel = (event) => {
-    event.preventDefault();
-    setAdd(false);
-  };
+        const offeringsResponse = await axios.get(
+          "https://hhqv2backend.vercel.app/api/offering"
+        );
+        const studentResponse = await axios.get(
+          "https://hhqv2backend.vercel.app/api/student"
+        );
+        const studentData = studentResponse.data.find(
+          (student) => student.student_id === studentId
+        );
 
-  const convertTo12HourFormat = (time24hr) => {
-    const timeParts = time24hr.split(":");
-    let hours = parseInt(timeParts[0], 10);
-    const minutes = timeParts[1];
+        if (studentData) {
+          const enrolledCourses = studentData.enrollment
+            .map((enrollment) => {
+              const offeringDetails = offeringsResponse.data.find(
+                (offering) => offering.offering_id === enrollment.offering_id
+              );
+              return offeringDetails
+                ? {
+                    time: `${offeringDetails.start_time} - ${offeringDetails.end_time}`,
+                    event: offeringDetails.name,
+                    Building: offeringDetails.building || "TBD",
+                    classNum: offeringDetails.room || "TBD",
+                  }
+                : null;
+            })
+            .filter((course) => course !== null);
 
-    let meridiem = "AM";
-
-    if (hours >= 12) {
-      meridiem = "PM";
-      if (hours > 12) {
-        hours -= 12;
+          setSchedule(enrolledCourses);
+        } else {
+          console.error("No enrollment data found for the student.");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
-    }
+    };
 
-    const time12hrFormatted = `${hours}:${minutes} ${meridiem}`;
-    return time12hrFormatted;
-  };
+    fetchData();
+  }, []);
 
   return (
     <div className="calendar">
       <div className="calendar-header">
-        <div>
-          <Clock />
-        </div>
+        <Clock />
       </div>
       <div className="calendar-body">
-        {!add && (
-          <div className="schedule-column">
-            {schedule.map((item, index) => (
-              <div className="schedule-item" key={index}>
-                <div className="time-event">
-                  <div className="time">{item.time}</div>
-                  <div className="event">{item.event}</div>
-                </div>
-                <div className="location">
-                  <div className="building">{item.Bulding}</div>
-                  <div className="classNum">{item.classNum}</div>
-                </div>
+        <div className="schedule-column">
+          {schedule.map((item, index) => (
+            <div className="schedule-item" key={index}>
+              <div className="time-event">
+                <div className="time">{item.time}</div>
+                <div className="event">{item.event}</div>
               </div>
-            ))}
-          </div>
-        )}
-        {!add && (
-          <button
-            className="btn btn-outline_primary"
-            onClick={() => setAdd(true)}
-          >
-            Add to your schedule
-          </button>
-        )}
-        {add && (
-          <div className="form-container">
-            <form className="form" onSubmit={handleSubmission}>
-              <input
-                type="text"
-                value={name}
-                placeholder="What?"
-                onChange={(event) => setName(event.target.value)}
-                required
-              />
-              <input
-                type="time"
-                id="timeInput"
-                value={time}
-                onChange={(event) => setTime(event.target.value)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Where?"
-                value={location}
-                onChange={(event) => setLocation(event.target.value)}
-                required
-              />
-              <div className="buttons">
-                <button className="btn btn-outline_primary" type="submit">
-                  Add
-                </button>
-                <button
-                  className="btn btn-outline_secondary"
-                  onClick={handleCancel}
-                >
-                  Cancel
-                </button>
+              <div className="location">
+                <div className="building">{item.Building}</div>
+                <div className="classNum">{item.classNum}</div>
               </div>
-            </form>
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
+        {/* Additional components like add button and form if needed */}
       </div>
     </div>
   );

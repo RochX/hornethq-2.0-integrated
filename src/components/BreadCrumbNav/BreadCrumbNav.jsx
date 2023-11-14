@@ -1,81 +1,70 @@
+import React, { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function BreadCrumbNav() {
-  return (
-    <div className="bread-crumb-nav">{useCreateBreadCrumbLinks()}</div>
-  )
-};
+  return <div className="bread-crumb-nav">{useCreateBreadCrumbLinks()}</div>;
+}
 
 function useCreateBreadCrumbLinks() {
   let pathnameArray = useGetBreadCrumbList();
-  
-  // map all path elements into navigation links
-  const navButtons = pathnameArray.map((pathname, index) =>
-    { if (index !== pathnameArray.length-1)
-        return (
-            createBreadCrumbWithLink(pathname, `nav-path-${index}`)
-          );
-      else 
-        return createLastBreadCrumbWithoutLink(pathname);
+
+  const navButtons = pathnameArray.map((pathname, index) => {
+    const breadcrumbkey = `nav-path-${index}`;
+
+    if (index !== pathnameArray.length - 1) {
+      return createBreadCrumbWithLink(pathname, breadcrumbkey);
+    } else {
+      return createLastBreadCrumbWithoutLink(pathname, breadcrumbkey);
     }
-  );
+  });
 
   return navButtons;
 }
 
 function useGetBreadCrumbList() {
-  // separate current path by "/"
   const locationArray = useLocation().pathname.slice(1).split("/");
-  let breadcrumblist = []
-  for (let i = 0; i < locationArray.length; i++) {
-    if (i === 0) {
-      breadcrumblist.push("/" + locationArray[i]);
-    }
-    else {
-      breadcrumblist.push(breadcrumblist[i-1] + "/" + locationArray[i]);
-    }
-  }
-  
-  breadcrumblist = addHomeToBreadCrumbList(breadcrumblist);
+  let breadcrumbList = [];
 
-  return breadcrumblist;
+  for (let i = 0; i < locationArray.length; i++) {
+    breadcrumbList.push(
+      i === 0
+        ? "/" + locationArray[i]
+        : breadcrumbList[i - 1] + "/" + locationArray[i]
+    );
+  }
+
+  return addHomeToBreadCrumbList(breadcrumbList);
 }
 
 function addHomeToBreadCrumbList(list) {
   if (list[0] !== "/home") {
-    list.splice(0, 0, "/home");
+    list.unshift("/home");
   }
   return list;
 }
 
-function createBreadCrumbWithLink(linkpath, breadcrumbkey) {
-  let breadcrumbname = linkpath.slice(linkpath.lastIndexOf("/")+1);
-  breadcrumbname = hypenatedStringToTitleCase(breadcrumbname);
+function createBreadCrumbWithLink(linkPath, breadcrumbKey) {
+  let breadcrumbName = hypenatedStringToTitleCase(
+    linkPath.slice(linkPath.lastIndexOf("/") + 1)
+  );
   return (
-    <>
-      <Link to={linkpath} key={breadcrumbkey}>
-        {breadcrumbname}
-      </Link>
-      {' > '}
-    </>
+    <Fragment key={breadcrumbKey}>
+      <Link to={linkPath}>{breadcrumbName}</Link>
+      {" > "}
+    </Fragment>
   );
 }
 
-function createLastBreadCrumbWithoutLink(linkpath) {
-  let breadcrumbname = linkpath.slice(linkpath.lastIndexOf("/")+1);
-  breadcrumbname = hypenatedStringToTitleCase(breadcrumbname);
-  return breadcrumbname;
+function createLastBreadCrumbWithoutLink(linkPath, breadcrumbKey) {
+  let breadcrumbName = hypenatedStringToTitleCase(
+    linkPath.slice(linkPath.lastIndexOf("/") + 1)
+  );
+  return <Fragment key={breadcrumbKey}>{breadcrumbName}</Fragment>;
 }
 
 function hypenatedStringToTitleCase(string) {
-  let words = string.split("-");
-  for (let i = 0; i < words.length; i++) {
-    words[i] = capitalizeFirstOfName(words[i]);
-  }
-
-  return words.join(" ");
-}
-
-function capitalizeFirstOfName(name) {
-  return name.charAt(0).toUpperCase() + name.slice(1);
+  return string
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }

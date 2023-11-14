@@ -1,98 +1,88 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-
+import KColor from "../../KColor.png";
+import { Link } from "react-router-dom";
 import "./Carousel.css";
+import "../../KColor.png";
 
 const Carousel = () => {
-  const carrouselData = [
-    {
-      title: "Intro to Sleeping",
-      info: "/",
-      prof: "Dr Jackson",
-      offerings: ["Winter", "Fall"],
-      picUrl:
-        "https://images.pexels.com/photos/18379232/pexels-photo-18379232/free-photo-of-wheat-on-a-field-during-sunset.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load",
-    },
-    {
-      title: "Underwater Basket Weaving 101",
-      info: "/",
-      prof: "Dr Jackson",
-      offerings: ["Winter", "Spring"],
-      picUrl:
-        "https://images.pexels.com/photos/17728880/pexels-photo-17728880/free-photo-of-landscape-water-field-summer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      title: "Alien Communication for Earthlings",
-      info: "/",
-      prof: "Dr Jackson",
-      offerings: ["Winter", "Spring"],
-      picUrl:
-        "https://images.pexels.com/photos/18260982/pexels-photo-18260982/free-photo-of-boys-riding-bicycles-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      title: "How to Become a Professional Bed Tester",
-      info: "/",
-      prof: "Dr Jackson",
-      offerings: ["Winter", "Spring", "Fall"],
-      picUrl:
-        "https://images.pexels.com/photos/3135371/pexels-photo-3135371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      title: "The Science of Spaghetti Splatter Dynamics",
-      info: "/",
-      prof: "Dr Jackson",
-      offerings: ["Winter", "Spring"],
-      picUrl:
-        "https://images.pexels.com/photos/18072294/pexels-photo-18072294/free-photo-of-woman-standing-by-atm-at-night.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-  ];
+  const [carouselData, setCarouselData] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const desiredCourseIds = [
+    "HIST-230",
+    "ENGL-153",
+    "MUSC-105",
+    "ENVS-115",
+    "RELG-232",
+  ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://hhqv2backend.vercel.app/api/course"
+        );
+        const filteredData = response.data.filter((course) =>
+          desiredCourseIds.includes(course.course_id)
+        );
+        setCarouselData(filteredData);
+      } catch (error) {
+        console.error("Error fetching carousel data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   const handleNext = () => {
-    if (currentSlide < carrouselData.length - 1) {
-      setCurrentSlide(currentSlide + 1);
-    } else {
-      setCurrentSlide(0);
-    }
+    setCurrentSlide(
+      currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0
+    );
   };
+
   const handlePrev = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-    } else {
-      setCurrentSlide(carrouselData.length - 1);
-    }
+    setCurrentSlide(
+      currentSlide > 0 ? currentSlide - 1 : carouselData.length - 1
+    );
   };
+
   useEffect(() => {
     const intervalId = setInterval(handleNext, 5000);
-
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, [currentSlide]);
+  }, [currentSlide, carouselData.length]);
 
-  function slideButtons(index) {
-    let classes = " slider-button ";
-    if (currentSlide === index) classes += " selected ";
-    return classes;
+  if (!carouselData.length) {
+    return <div>Loading...</div>;
   }
 
   return (
     <div className="carousel">
       <div className="slide">
         <div className="image-holder">
-          <img
-            src={carrouselData[currentSlide].picUrl}
-            alt=""
-            className="carrousel-image"
-          />
+          <img src={KColor} className="carousel-image" alt="Carousel" />
         </div>
         <div className="info-container">
-          <h1 className="carousel-top">{carrouselData[currentSlide].title}</h1>
-          <h3 className="carousel-top">{carrouselData[currentSlide].prof}</h3>
+          <h1 className="carousel-top">
+            {carouselData[currentSlide].course_id +
+              ": " +
+              carouselData[currentSlide].title}
+          </h1>
           <ul className="carousel-top">
-            {carrouselData[currentSlide].offerings.map((offering) => (
-              <li key={offering}>{offering}</li>
+            {[
+              ...new Set(
+                carouselData[currentSlide].offering.map(
+                  (offering) => offering.faculty_name
+                )
+              ),
+            ].map((facultyName, index) => (
+              <li key={index}>{facultyName}</li>
             ))}
           </ul>
-          <a href={carrouselData[currentSlide].info} className="carousel-top">
+          <a
+            href={`/course-detail/${carouselData[currentSlide].course_id}`}
+            className="carousel-top"
+          >
             Learn more
           </a>
         </div>
@@ -103,16 +93,7 @@ const Carousel = () => {
       <button className="right-click slide-controller" onClick={handleNext}>
         <BsChevronRight />
       </button>
-      <div className="slider-buttons">
-        {carrouselData.map((box, index) => (
-          <button
-            key={index}
-            className={slideButtons(index)}
-            onClick={() => setCurrentSlide(index)}
-          ></button>
-        ))}
-      </div>
-      <button className="add">Quick add</button>
+      {/* Additional elements */}
     </div>
   );
 };
