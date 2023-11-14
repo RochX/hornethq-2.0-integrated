@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import React, { useState } from "react";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Academics from "./pages/Academics";
@@ -22,15 +23,19 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import CourseDetail from "./pages/CourseDetail/CourseDetail";
 
 function App() {
+  const [dataFromChild, setDataFromChild] = useState(null);
+  const handleChildData = (childData) => {
+    setDataFromChild(childData);
+  };
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout courseID={dataFromChild} />}>
         <Route index element={<Navigate to="login" />} />
 
         <Route path="/course-detail/:courseId" element={<CourseDetail />} />
 
-        <Route path="home" element={<Home />} />
+        <Route path="home" element={<Home onDataPassed={handleChildData} />} />
         <Route path="academics" element={<Academics />} />
         <Route path="academics/grades" element={<Grades />} />
         <Route path="/academics/catalog" element={<CourseCatalog />} />
