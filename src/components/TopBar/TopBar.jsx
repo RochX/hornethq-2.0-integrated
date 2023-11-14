@@ -1,8 +1,4 @@
 import React from "react";
-<<<<<<< Updated upstream
-import { FaUser } from 'react-icons/fa';
-import { BiLogOut } from 'react-icons/bi';
-=======
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
@@ -12,7 +8,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import "./TopBar.css";
 import { useNavigate } from "react-router-dom";
->>>>>>> Stashed changes
 
 function TopBar() {
   const appBarColor = "#333333";
