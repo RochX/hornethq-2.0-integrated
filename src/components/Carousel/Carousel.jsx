@@ -39,6 +39,7 @@ const imageMappings = {
   THEA:"https://media.istockphoto.com/id/115999740/photo/classical-theatre.jpg?s=2048x2048&w=is&k=20&c=zf2R8ZaDESivKks_SCtw9NlMFhYmJEJYYXjZPTRS1BA=",
   WGS:"https://media.istockphoto.com/id/1254992681/vector/a-strong-woman-protesting-against-domestic-violence-and-female-abuse.jpg?s=2048x2048&w=is&k=20&c=Zkl_y6j0zCEbk3h0lL4x-T3oOWXV7qHTEEdIG4qUOks=",
   PSYC:"https://media.istockphoto.com/id/1294477039/vector/metaphor-bipolar-disorder-mind-mental-double-face-split-personality-concept-mood-disorder-2.jpg?s=2048x2048&w=is&k=20&c=TFR3C5BXdwXjF7TtG4olJuJPCYtHhx6Rj83fJ97bZS4=",
+  PHYS: "https://media.istockphoto.com/id/936903524/vector/blackboard-inscribed-with-scientific-formulas-and-calculations-in-physics-and-mathematics-can.jpg?s=2048x2048&w=is&k=20&c=HwpVfrz9ceJNmjz_Pny801wCB2brYSaHBJoUqfTHGdo=",
 };
 
 
