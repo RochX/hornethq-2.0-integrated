@@ -1,0 +1,56 @@
+/* Modal.css */
+
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.modalContainer {
+  width: 400px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0, 0, 0) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-right: 100px;
+  position: relative;
+}
+
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 0; 
+  background-color: #ff6200;
+}
+
+.closeButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeButton button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+}
+
+.modalContainer .body {
+  flex: 10%;
+  display: block;
+  justify-content: center;
+  height: auto;
+  max-width: 350px;
+  padding: 10px;
+}
+
+.content-container {
+  text-align: right;
+  margin-right: 50px;
+}
