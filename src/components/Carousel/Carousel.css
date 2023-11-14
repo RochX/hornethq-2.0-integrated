@@ -1,4 +1,4 @@
-*,
+,
 *::after,
 *::before {
   margin: 0;
@@ -14,8 +14,16 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-
+  height: 100%;
   z-index: 2;
+  border: 1px solid red;
+}
+.carousel-image {
+  max-width: 100%; /* Adjust this value to control the maximum width of the image */
+  max-height: 100%; /* Adjust this value to control the maximum height of the image */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* or object-fit: cover; depending on how you want the image to fit */
 }
 .slide {
   width: 100%;
@@ -24,6 +32,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 
 .slide-controller {
   position: absolute;
@@ -47,6 +56,7 @@
   border: 1px solid black;
 }
 
+
 .carousel:hover > .slide-controller {
   opacity: 1;
 }
@@ -57,6 +67,7 @@
   opacity: 70%;
 }
 .info-container {
+  padding: 32px 64px;
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;

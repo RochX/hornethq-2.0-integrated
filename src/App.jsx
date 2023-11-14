@@ -21,6 +21,10 @@ import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import CourseDetail from "./pages/CourseDetail/CourseDetail";
+import LearnMore from './pages/LearnMore';
+
+
+
 
 function App() {
   const [dataFromChild, setDataFromChild] = useState(null);
@@ -36,6 +40,7 @@ function App() {
         <Route path="/course-detail/:courseId" element={<CourseDetail />} />
 
         <Route path="home" element={<Home onDataPassed={handleChildData} />} />
+        <Route path="/learnmore/:courseId" element={<LearnMore />} />
         <Route path="academics" element={<Academics />} />
         <Route path="academics/grades" element={<Grades />} />
         <Route path="/academics/catalog" element={<CourseCatalog />} />
