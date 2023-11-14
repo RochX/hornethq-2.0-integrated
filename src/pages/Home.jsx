@@ -1,5 +1,6 @@
 import MainNavLayout from "../components/MainNav/MainNavLayout";
 import IndexPage from "./IndexPage/IndexPage";
+import Layout from "../Layout";
 import { useState } from "react";
 
 function Home() {
