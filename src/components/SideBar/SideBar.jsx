@@ -5,10 +5,9 @@ import { BiDollar } from "react-icons/bi";
 import { BsFillGearFill } from "react-icons/bs";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-// Import the icon if you have it
-// import { YourFinancialIcon } from 'react-icons/...';
 
-const SideBar = () => {
+const SideBar = ({ isOpen, toggleSideBar }) => {
+  //   const [isOpen, setIsOpen] = useState(true);
   const arraySidebar = [
     {
       name: "Home",
@@ -32,14 +31,23 @@ const SideBar = () => {
     },
   ];
 
+  //   const toggleSideBar = () => {
+  //     setIsOpen(!isOpen);
+
   return (
-    <div className="sidebar">
-      <div>hamburger</div>
+    <div className={`sidebar ${isOpen ? "" : "closed"}`}>
+      <div className="hamburger" onClick={toggleSideBar}>
+        <FaBars />
+      </div>
       <div className="map">
         {arraySidebar.map((item) => (
-          <Link to={item.link} className="link-container">
-            {item.icon}
-            {item.name}
+          <Link to={item.link} className="link-container" key={item.name}>
+            {isOpen ? (
+              item.icon
+            ) : (
+              <span className="icon-only">{item.icon}</span>
+            )}
+            {isOpen && item.name}
           </Link>
         ))}
       </div>

@@ -23,36 +23,37 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route index element={<Navigate to="LoginPage" />} />
-      <Route path="/layout/home" element={<Home />} />
-
-      <Route path="academics" element={<Academics />} />
-      <Route path="academics/grades" element={<Grades />} />
-      <Route path="/academics/catalog" element={<CourseCatalog />} />
-      <Route path="/academics/planning" element={<StudentPlanning />} />
-      <Route path="/academics/transcripts" element={<UnofficialTranscript />} />
-      <Route path="employee" element={<Employee />} />
-      <Route
-        path="/employee/earnings-statements"
-        element={<EarningsStatements />}
-      />
-      <Route
-        path="/employee/supervisor-time-history"
-        element={<SupervisorTimeHistory />}
-      />
-      <Route path="employee/tax-information" element={<EmployeeTaxInfo />} />
-      <Route path="/employee/time-history" element={<TimeHistory />} />
-      <Route path="employee/time-sheet" element={<TimeEntry />} />
-      <Route path="financial" element={<FinInfo />} />
-      <Route path="/financial/billing" element={<Billing />} />
-      <Route path="/financial/aid" element={<FinAid />} />
-      <Route path="/financial/tax-information" element={<StudentTaxInfo />} />
-      <Route path="settings" element={<Settings />} />
-
-      <Route path="/loginpage" element={<LoginPage />} />
-
-      <Route path="*" element={<NotFound />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="home" />} />
+        <Route path="home" element={<Home />} />
+        <Route path="academics" element={<Academics />} />
+        <Route path="academics/grades" element={<Grades />} />
+        <Route path="/academics/catalog" element={<CourseCatalog />} />
+        <Route path="/academics/planning" element={<StudentPlanning />} />
+        <Route
+          path="/academics/transcripts"
+          element={<UnofficialTranscript />}
+        />
+        <Route path="employee" element={<Employee />} />
+        <Route
+          path="/employee/earnings-statements"
+          element={<EarningsStatements />}
+        />
+        <Route
+          path="/employee/supervisor-time-history"
+          element={<SupervisorTimeHistory />}
+        />
+        <Route path="employee/tax-information" element={<EmployeeTaxInfo />} />
+        <Route path="/employee/time-history" element={<TimeHistory />} />
+        <Route path="employee/time-sheet" element={<TimeEntry />} />
+        <Route path="financial" element={<FinInfo />} />
+        <Route path="/financial/billing" element={<Billing />} />
+        <Route path="/financial/aid" element={<FinAid />} />
+        <Route path="/financial/tax-information" element={<StudentTaxInfo />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
     </Routes>
   );
 }

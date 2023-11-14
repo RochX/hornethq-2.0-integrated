@@ -1,26 +1,27 @@
 import "./TopBar.css";
 import React from "react";
-import { FaUser } from 'react-icons/fa';
-import { BiLogOut } from 'react-icons/bi';
+import { FaUser } from "react-icons/fa";
+import { BiLogOut } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function TopBar() {
   return (
     <>
       <div className="topnav">
-        <a href="">
+        <Link to="">
           <img
             src="https://hornethq.kzoo.edu/Student/K-Images/HornetHQ5.svg"
             alt="Hornet HQ"
             width="300"
             height="80"
           />
-        </a>
-        <a className="TopBar" href="">
-          <FaUser style={{ color: 'orange' }} /> Profile
-        </a>
-        <a className="TopBar" href="">
-          <BiLogOut style={{ color: 'orange' }} /> Sign Out
-        </a>
+        </Link>
+        <Link className="TopBar" to="">
+          <FaUser style={{ color: "orange" }} /> Profile
+        </Link>
+        <Link className="TopBar" to="/login">
+          <BiLogOut style={{ color: "orange" }} /> Sign Out
+        </Link>
       </div>
     </>
   );

@@ -116,7 +116,7 @@ const StudentLogin = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      setTimeout(() => navigate("/home"), 5000); // Redirect after 5 seconds
+      setTimeout(() => navigate("/home"), 2000); // Redirect after 5 seconds
     }
   }, [isLoggedIn, navigate]);
 
