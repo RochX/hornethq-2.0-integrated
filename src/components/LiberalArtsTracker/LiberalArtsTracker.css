@@ -1,0 +1,6 @@
+.lib-art-tracker-subset {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%
+}
