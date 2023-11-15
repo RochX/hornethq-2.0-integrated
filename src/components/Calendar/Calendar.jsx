@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Clock from "../Clock/Clock";
-import "./Calendar.css";
+import {
+  Box,
+  Typography,
+  Paper,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  Container,
+} from "@mui/material";
 
 const Calendar = () => {
   const [schedule, setSchedule] = useState([]);
@@ -27,6 +36,7 @@ const Calendar = () => {
 
         if (studentData) {
           const enrolledCourses = studentData.enrollment
+            .filter((enrollment) => enrollment.grade === "In Progress")
             .map((enrollment) => {
               const offeringDetails = offeringsResponse.data.find(
                 (offering) => offering.offering_id === enrollment.offering_id
@@ -35,6 +45,7 @@ const Calendar = () => {
                 ? {
                     time: `${offeringDetails.start_time} - ${offeringDetails.end_time}`,
                     event: offeringDetails.name,
+                    status: "In Progress",
                     Building: offeringDetails.building || "TBD",
                     classNum: offeringDetails.room || "TBD",
                   }
@@ -55,28 +66,37 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div className="calendar">
-      <div className="calendar-header">
-        <Clock />
-      </div>
-      <div className="calendar-body">
-        <div className="schedule-column">
+    <Container>
+      <Paper elevation={3} style={{ padding: "20px", marginTop: "20px" }}>
+        <Box display="flex" justifyContent="center" alignItems="center" mb={2}>
+          <Clock />
+        </Box>
+        <Typography variant="h4" gutterBottom>
+          My Schedule
+        </Typography>
+        <List>
           {schedule.map((item, index) => (
-            <div className="schedule-item" key={index}>
-              <div className="time-event">
-                <div className="time">{item.time}</div>
-                <div className="event">{item.event}</div>
-              </div>
-              <div className="location">
-                <div className="building">{item.Building}</div>
-                <div className="classNum">{item.classNum}</div>
-              </div>
-            </div>
+            <React.Fragment key={index}>
+              <ListItem>
+                <ListItemText
+                  primary={item.event}
+                  secondary={`${item.status} | ${item.time}`}
+                />
+                <Typography variant="body2" color="textSecondary">
+                  {`${item.Building} ${item.classNum}`}
+                </Typography>
+              </ListItem>
+              {index < schedule.length - 1 && <Divider />}
+            </React.Fragment>
           ))}
-        </div>
-        {/* Additional components like add button and form if needed */}
-      </div>
-    </div>
+        </List>
+        {schedule.length === 0 && (
+          <Typography variant="body1">
+            No current in-progress courses.
+          </Typography>
+        )}
+      </Paper>
+    </Container>
   );
 };
 
