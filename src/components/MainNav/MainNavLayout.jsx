@@ -51,8 +51,9 @@ const PAGEBUTTON_CONTENT_DICT = {
   "FININFO": {title: "Financial Information", description: "Here you can access billing, financial aid data, forms, etc.", path: "/financial", icon: <RiCurrencyLine />},
   "BILLING": {title: "Billing", description: "Here you can view your latest statement and make a payment online.", path: "/financial/billing", icon: <AiOutlineDollarCircle />},
   "EMPLOYEE": {title: "Employee", description: "Here you can view your tax form consents, earnings statements, banking information, timecards, and leave balances.", path: "/employee", icon: <BsFillPersonBadgeFill />},
+  "TAX_INFO_EMPLOYEE": {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/employee/tax-information", icon: <LiaFileInvoiceDollarSolid />},
   "FINAID": {title: "Financial Aid", description: "Here you can access financial aid data, forms, etc.", path: "/financial/aid", icon: <FaFileInvoiceDollar />},
-  "TAX_INFO": {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/financial/tax-information", icon: <LiaFileInvoiceDollarSolid />},
+  "TAX_INFO_STUDENT": {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information.", path: "/financial/tax-information", icon: <LiaFileInvoiceDollarSolid />},
   "TIME_ENTRY": {title: "Time Entry", description: "Here you can fill out your timecards.", path: "/employee/time-sheet", icon: <FaBusinessTime />},
   "EARNING_STATEMENTS": {title: "Earnings Statements", description: "Here you can view your earnings statement history.", path: "/employee/earnings-statements", icon: <RiCurrencyLine />},
   "TIME_HISTORY": {title: "Time History", description: "Here you can view your paid timecards.", path: "/employee/time-history", icon: <TbFileTime />},
@@ -79,11 +80,11 @@ const ACADEMICS_PAGE_BUTTONS_CONTENT = [
 const FININFO_PAGE_BUTTONS_CONTENT = [
   PAGEBUTTON_CONTENT_DICT["BILLING"],
   PAGEBUTTON_CONTENT_DICT["FINAID"],
-  PAGEBUTTON_CONTENT_DICT["TAX_INFO"],
+  PAGEBUTTON_CONTENT_DICT["TAX_INFO_STUDENT"],
 ]
 
 const EMPLOYEE_PAGE_BUTTONS_CONTENT = [
-  PAGEBUTTON_CONTENT_DICT["TAX_INFO"],
+  PAGEBUTTON_CONTENT_DICT["TAX_INFO_EMPLOYEE"],
   PAGEBUTTON_CONTENT_DICT["TIME_ENTRY"],
   PAGEBUTTON_CONTENT_DICT["EARNING_STATEMENTS"],
   PAGEBUTTON_CONTENT_DICT["TIME_HISTORY"],
