@@ -112,7 +112,7 @@ const CourseDetail = () => {
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>
               {" "}
-              <h3> Section Details </h3>
+              <h3> Section Details: </h3>
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -154,6 +154,9 @@ const CourseDetail = () => {
                   <div>
                     <strong>Active Students:</strong>{" "}
                     {offering.active_students || "TBD"}
+                  </div>
+                  <div>
+                    <strong>Term Offered:</strong> {offering.term_id}
                   </div>
                 </div>
               ))}
