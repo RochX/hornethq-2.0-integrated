@@ -21,6 +21,7 @@ import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import CourseDetail from "./pages/CourseDetail/CourseDetail";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   const [dataFromChild, setDataFromChild] = useState(null);
@@ -61,8 +62,10 @@ function App() {
         <Route path="/financial/aid" element={<FinAid />} />
         <Route path="/financial/tax-information" element={<StudentTaxInfo />} />
         <Route path="settings" element={<Settings />} />
-        <Route path="*" element={<NotFound />} />
 
+        <Route path="/profile" element={<ProfilePage />} />
+
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
