@@ -1,6 +1,11 @@
 import ProgressBar from "../ProgressBar/ProgressBar";
 import "./LiberalArtsTracker.css";
 
+const major_minor_progress_bars = [
+  <ProgressBar bgcolor="#EA6820" completed={20} title="Major" />,
+  <ProgressBar bgcolor="#EA6820" completed={90} title="Minor" />
+]
+
 const lib_arts_progess_bars = [
   <ProgressBar bgcolor="red" completed={50} title="STEM" />,
   <ProgressBar bgcolor="#44ADA5" completed={20} title="Social Sciences" />,
@@ -13,6 +18,9 @@ function LiberalArtsTracker() {
   return (
     <div className="lib-art-tracker">
       <ProgressBar bgcolor="#EA6820" completed={40} title="Graduation Progress" />
+      <div className="lib-art-tracker-subset">
+        {style_progress_bars(major_minor_progress_bars)}
+      </div>
       <div className="lib-art-tracker-subset">
         {style_progress_bars(lib_arts_progess_bars)}
       </div>
@@ -27,7 +35,7 @@ function style_progress_bars(progress_bars) {
   }
 
   const styled_progress_bars = progress_bars.map((pbar, index) => {
-    const pbar_id = "pbar_" + index;
+    const pbar_id = "pbar-" + index;
     return (
      <div className="styled-pbar" style={pbar_styling} id={pbar_id} key={pbar_id}>
        {pbar}
