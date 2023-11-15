@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import KColor from "../../KColor.png";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { Slide } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -10,6 +11,7 @@ const Carousel = ({ onDataPassed }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideIn, setSlideIn] = useState(true);
 
+  // imageMappings object
   const imageMappings = {
     AFST: "https://media.istockphoto.com/id/1131949134/photo/wild-african-elephant-in-the-savannah-serengeti-national-park-wildlife-of-tanzania-african.jpg?s=2048x2048&w=is&k=20&c=N1FlmQtg9zR9DV9DW8qiS8eR8RyiCzmZPvUCIWpEhVo=",
     AMST: "https://media.istockphoto.com/id/1314505420/photo/the-flag-of-the-united-states-of-america-flying-in-front-of-the-capitol-building-blurred-in.jpg?s=2048x2048&w=is&k=20&c=4d_acF00RY72qNspYX0JwH6yCBaPl7werCYl5CQkbn4=",
@@ -56,22 +58,20 @@ const Carousel = ({ onDataPassed }) => {
         const response = await axios.get(
           "https://hhqv2backend.vercel.app/api/course"
         );
-        const uniqueClassIds = Array.from(
-          new Set(response.data.map((course) => course.course_id))
-        );
-        const randomClassIds = [];
+        const validTerms = ["2023WI", "2023SP"]; // Terms to include
 
-        while (randomClassIds.length < 4) {
-          const randomIndex = Math.floor(Math.random() * uniqueClassIds.length);
-          const randomClassId = uniqueClassIds[randomIndex];
-          if (!randomClassIds.includes(randomClassId)) {
-            randomClassIds.push(randomClassId);
-          }
-        }
+        // Filter each course's offerings to include only those in valid terms
+        const filteredData = response.data
+          .map((course) => {
+            return {
+              ...course,
+              offering: course.offering.filter((offering) =>
+                validTerms.includes(offering.term_id)
+              ),
+            };
+          })
+          .filter((course) => course.offering.length > 0); // Keep only courses with valid offerings
 
-        const filteredData = response.data.filter((course) =>
-          randomClassIds.includes(course.course_id)
-        );
         setCarouselData(filteredData);
       } catch (error) {
         console.error("Error fetching carousel data:", error);
@@ -112,15 +112,23 @@ const Carousel = ({ onDataPassed }) => {
   }
 
   const courseType = carouselData[currentSlide].course_id.split("-")[0];
-  const imageUrl = imageMappings[courseType];
+  const imageUrl = imageMappings[courseType] || KColor; // Default image if not found in mappings
 
   return (
     <div className="carousel">
       <Slide direction="left" in={slideIn} mountOnEnter unmountOnExit>
         <div className="slide">
-          <div className="image-holder">
-            <img src={imageUrl} className="carousel-image" alt="Carousel" />
-          </div>
+          <img
+            src={imageUrl}
+            className="carousel-image"
+            alt="Carousel"
+            style={
+              imageUrl === KColor
+                ? { width: "290px", height: "300px" }
+                : { width: 500, height: 300 }
+            }
+          />
+
           <div className="info-container">
             <h1 className="carousel-top">
               {carouselData[currentSlide].course_id +
@@ -128,8 +136,24 @@ const Carousel = ({ onDataPassed }) => {
                 carouselData[currentSlide].title}
             </h1>
             <ul className="carousel-top">
-              {carouselData[currentSlide].offering.map((offering, index) => (
-                <li key={index}>{offering.faculty_name}</li>
+              {[
+                ...new Set(
+                  carouselData[currentSlide].offering.map(
+                    (offering) => offering.faculty_name
+                  )
+                ),
+              ].map((facultyName, index) => (
+                <li key={index}>
+                  {facultyName}
+                  <br />
+                  {carouselData[currentSlide].offering.find(
+                    (o) => o.faculty_name === facultyName
+                  ).term_id +
+                    " - Section " +
+                    carouselData[currentSlide].offering.find(
+                      (o) => o.faculty_name === facultyName
+                    ).section_number}
+                </li>
               ))}
             </ul>
             <Link
