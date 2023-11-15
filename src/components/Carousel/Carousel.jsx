@@ -26,7 +26,7 @@ const Carousel = ({ onDataPassed }) => {
   ECON:"https://media.istockphoto.com/id/1406742992/photo/businessman-draws-increase-arrow-graph-corporate-future-growth-year-2022-to-2023-planning.jpg?s=2048x2048&w=is&k=20&c=hzD4epyVhty_5pT7cTEuGtx5ct5NZ1ha_HnZyO8yyDg=",
   ENGL:"https://media.istockphoto.com/id/1047570732/vector/english.jpg?s=2048x2048&w=is&k=20&c=G5WLxRtiVqKGbd9AfN0PQXOD1DljBC0aAiX2_QPUHjo=",
   ENVS:"https://media.istockphoto.com/id/1577180772/photo/making-field-observations-of-a-river-and-coastline-with-a-clipboard-and-pen.jpg?s=2048x2048&w=is&k=20&c=Znp5n8E6i-KstamyvdRIT0eryL516G_mQe993pCN8IA=",
-  FRENC:"https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=2048x2048&w=is&k=20&c=IfD0giUk7Zy7DVMsTblk-MSA3rp9o980Ga_Y9X4IsrM=",
+  FREN:"https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=2048x2048&w=is&k=20&c=IfD0giUk7Zy7DVMsTblk-MSA3rp9o980Ga_Y9X4IsrM=",
   GERM: "https://media.istockphoto.com/id/1152163935/photo/reichstag-building-seat-of-the-german-parliament.jpg?s=1024x1024&w=is&k=20&c=1qbI_eI8t25ul2xlBoJCY4xNLrhlBWIueC4ndiLml_M=",
   HIST:"https://media.istockphoto.com/id/936911748/photo/old-hourglass-and-ancient-book.jpg?s=2048x2048&w=is&k=20&c=UgXz-GpOsXT4sa-w6-e29uEvKuD_gmnLilNAVKVhfGo=",
   IDSY:"https://media.istockphoto.com/id/1446301560/photo/modern-vehicle-with-ai-assisted-sensors-for-movement.jpg?s=1024x1024&w=is&k=20&c=IdupIuSEmVy68yt9vFGM6AdQMq3EbIW5W46UgsjlhdA=",
@@ -49,8 +49,7 @@ const Carousel = ({ onDataPassed }) => {
   CHEM: "https://media.istockphoto.com/id/1387118000/photo/researcher-working-whit-fluids-in-flasks-in-the-chemical-laboratory.jpg?s=2048x2048&w=is&k=20&c=ntqFm5awxnBoBU-zB3z0BWRG2d6bGejztRbxY2YEwEo=",
   POLS: "https://media.istockphoto.com/id/509170745/photo/national-capitol-building.jpg?s=2048x2048&w=is&k=20&c=Awjidqr4EE2e_U1ruPMcpwxxh1Q7brHEuLCP9_Pver4=",
   CLAS: "https://media.istockphoto.com/id/176955067/photo/candlelit-classics.jpg?s=2048x2048&w=is&k=20&c=7RvMt3Hj9Cx1YtqPMYrR_7jo7hrE2k5X11ipkU4T7AA=",
-  FRAN: "https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=2048x2048&w=is&k=20&c=IfD0giUk7Zy7DVMsTblk-MSA3rp9o980Ga_Y9X4IsrM=",
-};
+  }
 useEffect(() => {
   const fetchData = async () => {
     try {
@@ -65,13 +64,15 @@ useEffect(() => {
         const randomClassId = uniqueClassIds[randomIndex];
         if (!randomClassIds.includes(randomClassId) &&
             !randomClassId.includes("CIPX") &&
-            !randomClassId.includes("593")) {
+            !randomClassId.includes("593") &&
+            !randomClassId.includes("498")) {
           randomClassIds.push(randomClassId);
         }
       }
 
       const filteredData = response.data.filter((course) =>
-        randomClassIds.includes(course.course_id)
+      randomClassIds.includes(course.course_id)
+  
       );
 
       setCarouselData(filteredData);
