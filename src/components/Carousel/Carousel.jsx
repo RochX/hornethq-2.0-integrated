@@ -49,6 +49,7 @@ const Carousel = ({ onDataPassed }) => {
   CHEM: "https://media.istockphoto.com/id/1387118000/photo/researcher-working-whit-fluids-in-flasks-in-the-chemical-laboratory.jpg?s=2048x2048&w=is&k=20&c=ntqFm5awxnBoBU-zB3z0BWRG2d6bGejztRbxY2YEwEo=",
   POLS: "https://media.istockphoto.com/id/509170745/photo/national-capitol-building.jpg?s=2048x2048&w=is&k=20&c=Awjidqr4EE2e_U1ruPMcpwxxh1Q7brHEuLCP9_Pver4=",
   CLAS: "https://media.istockphoto.com/id/176955067/photo/candlelit-classics.jpg?s=2048x2048&w=is&k=20&c=7RvMt3Hj9Cx1YtqPMYrR_7jo7hrE2k5X11ipkU4T7AA=",
+  FRAN: "https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=2048x2048&w=is&k=20&c=IfD0giUk7Zy7DVMsTblk-MSA3rp9o980Ga_Y9X4IsrM=",
 };
 useEffect(() => {
   const fetchData = async () => {
