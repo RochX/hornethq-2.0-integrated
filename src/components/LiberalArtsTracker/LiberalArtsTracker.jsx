@@ -7,10 +7,11 @@ const major_minor_progress_bars = [
 ]
 
 const lib_arts_progess_bars = [
-  <ProgressBar bgcolor="red" completed={50} title="STEM" />,
+  <ProgressBar bgcolor="darkblue" completed={50} title="STEM" />,
   <ProgressBar bgcolor="#44ADA5" completed={20} title="Social Sciences" />,
   <ProgressBar bgcolor="blue" completed={50} title="Humanities" />,
   <ProgressBar bgcolor="purple" completed={30} title="Fine Arts" />,
+  <ProgressBar bgcolor="red" completed={100} title="Language" />,
   <ProgressBar bgcolor="green" completed={60} title="PE" />
 ]
 
