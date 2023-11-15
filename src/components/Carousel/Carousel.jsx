@@ -125,7 +125,7 @@ const Carousel = ({ onDataPassed }) => {
             style={
               imageUrl === KColor
                 ? { width: "290px", height: "300px" }
-                : { width: 500, height: 300 }
+                : { width: 500, height: 400 }
             }
           />
 

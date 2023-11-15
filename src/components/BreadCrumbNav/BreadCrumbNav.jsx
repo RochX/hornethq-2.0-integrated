@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./BreadCrumbNav.css";
 
 export default function BreadCrumbNav() {
   return <div className="bread-crumb-nav">{useCreateBreadCrumbLinks()}</div>;

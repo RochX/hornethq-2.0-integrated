@@ -26,10 +26,15 @@ function Home({ onDataPassed }) {
         </button>
       </div>
 
-      {!view && <IndexPage onDataPassed={handleChildData} />}
+      {!view && (
+        <div>
+          <h1>Welcome to the Hornet HQ 2.0 Dashboard!</h1>
+          <IndexPage onDataPassed={handleChildData} />
+        </div>
+      )}
       {view && (
         <div>
-          <h1>Home Page</h1>
+          <h1>Welcome to Hornet HQ 2.0!</h1>
           <MainNavLayout id="home" />
         </div>
       )}

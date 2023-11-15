@@ -77,12 +77,9 @@ const Calendar = () => {
         </Box>
         {studentName && (
           <Typography variant="h5" gutterBottom>
-            Welcome, {studentName}!
+            {studentName}'s Schedule
           </Typography>
         )}
-        <Typography variant="h4" gutterBottom>
-          Schedule
-        </Typography>
         <List>
           {schedule.map((item, index) => (
             <React.Fragment key={index}>
