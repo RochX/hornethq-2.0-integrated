@@ -3,7 +3,7 @@ import "./SideBar.css";
 import { FaBars, FaHome } from "react-icons/fa";
 import { BiDollar } from "react-icons/bi";
 import { BsFillGearFill } from "react-icons/bs";
-import { RiGraduationCapFill } from "react-icons/ri";
+import { RiGraduationCapFill, RiCurrencyLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const SideBar = ({ isOpen, toggleSideBar }) => {
@@ -18,6 +18,11 @@ const SideBar = ({ isOpen, toggleSideBar }) => {
       name: "Academics",
       icon: <RiGraduationCapFill className="icon" />,
       link: "/academics",
+    },
+    {
+      name: "Financial",
+      icon: <RiCurrencyLine className="icon" />,
+      link: "/financial",
     },
     {
       name: "Employment",
