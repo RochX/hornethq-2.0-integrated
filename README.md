@@ -13,12 +13,9 @@ Hornet HQ as it stands has many issues for current students, such as the course 
 
 By redesigning Hornet HQ, we wish to highlight these current issues and provide prototypes on possible solutions.
 
-## React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running the Front-End
+- Install [`node.js`](https://nodejs.org/en).
+- Clone this git repository with the command `git clone https://github.com/RochX/hornethq-2.0-integrated.git`
+- Navigate to the root of the repository with `cd hornethq-2.0-integrated`
+- Install dependencies with `npm install`.
+- Run the front-end with `npm run dev`.
