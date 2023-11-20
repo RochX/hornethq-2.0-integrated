@@ -19,3 +19,13 @@ By redesigning Hornet HQ, we wish to highlight these current issues and provide 
 - Navigate to the root of the repository with `cd hornethq-2.0-integrated`
 - Install dependencies with `npm install`.
 - Run the front-end with `npm run dev`.
+  
+Click here for [`video instructions`](https://kzoo-my.sharepoint.com/:v:/g/personal/harsha_ajjarapu19_kzoo_edu/EXkRVuPuM8ZLtOqxr30dYxUBPR3TXvarR0XNZxMSozJCaA?e=GthDhe)  (only for K College Students/Faculty)
+
+Logins you can use:
+
+ - k19xs01 
+ - k19ha01
+ -  k20ag07
+ -  k20se09
+ -  k19ll23
